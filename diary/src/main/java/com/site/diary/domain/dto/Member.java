@@ -1,4 +1,4 @@
-package com.site.diary.domain;
+package com.site.diary.domain.dto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
