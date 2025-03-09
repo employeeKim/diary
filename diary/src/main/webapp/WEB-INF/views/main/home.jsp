@@ -10,8 +10,8 @@
 <script src="/js/main/home.js"></script>
 </head>
 <body>
-
-<h1>Home</h1>
-
+    <h1>로그 데이터 조회</h1>
+    <button id="loadLogs">로그 가져오기</button>
+    <ul id="logList"></ul>
 </body>
 </html>
