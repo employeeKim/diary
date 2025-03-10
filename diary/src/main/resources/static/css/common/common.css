@@ -1,1 +1,36 @@
-@charset "UTF-8";
+body {
+    background-color: #F5E1C8; /* 우드톤 연한 베이지 */
+    color: #4B382A; /* 어두운 브라운 계열 글씨 */
+}
+
+m-r-5 {
+	margin-right:5px;
+}
+
+m-r-10 {
+	margin-right:10px;
+}
+
+m-r-15 {
+	margin-right:15px;
+}
+
+m-r-20 {
+	margin-right:20px;
+}
+
+m-t-5 {
+	margin-top:5px;
+}
+
+m-t-10 {
+	margin-top:10px;
+}
+
+m-t-15 {
+	margin-top:15px;
+}
+
+m-t-20 {
+	margin-top:20px;
+}
