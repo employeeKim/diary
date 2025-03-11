@@ -1,6 +1,35 @@
 body {
-    background-color: #F5E1C8; /* 우드톤 연한 베이지 */
-    color: #4B382A; /* 어두운 브라운 계열 글씨 */
+	height: 100vh;
+    background: linear-gradient(to bottom, #F5E1C8, #D2B48C);
+    color: #4B382A;
+   	overflow: hidden; 
+}
+
+#nav{
+	padding:20px;
+	width: 100%;
+    background: linear-gradient(to bottom, #f5e1c8, #d2b48c);
+    border-bottom: 2px solid #c4a484;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 100px;
+}
+
+.navbar-nav .nav-link {
+    padding: 10px 15px;
+}
+
+.nav-link{
+    color: #b77b3e;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.border-style {
+    border: 2px solid #c4a484;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .m-l-5 {
@@ -66,4 +95,73 @@ body {
 
 .m-b-20 {
 	margin-bottom:20px;
+}
+
+.m-b-30 {
+	margin-bottom:30px;
+}
+
+#footer {
+	position: absolute;
+    bottom: 0%;
+    width: 100%;
+}
+
+
+/* 모달 배경 */
+.modal-content {
+    background-color: #f5e1c8; /* 부드러운 베이지 톤 */
+    border-radius: 12px; /* 모서리 둥글게 */
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 모달 헤더 */
+.modal-header {
+    background-color: #d2ab7f; /* 연한 브라운 */
+    color: #fff; /* 흰색 텍스트 */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* 모달 닫기 버튼 */
+.modal-header .btn-close {
+    filter: invert(1); /* 흰색 아이콘으로 변경 */
+}
+
+/* 입력 필드 */
+.modal-body input {
+    background-color: #f8f0e3;
+    border: 1px solid #d2ab7f;
+    border-radius: 6px;
+    padding: 10px;
+    color: #5a3e2b; /* 어두운 갈색 */
+}
+
+/* 입력 필드 포커스 효과 */
+.modal-body input:focus {
+    outline: none;
+    border-color: #c28e61;
+    box-shadow: 0 0 5px rgba(194, 142, 97, 0.5);
+}
+
+/* 회원가입 버튼 */
+#signupSubmit {
+    background-color: #d2ab7f;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    width: 100%;
+    font-weight: bold;
+}
+
+#signupSubmit:hover {
+    background-color: #c28e61;
+}
+
+/* 모달 중앙 정렬 */
+.modal-dialog {
+    max-width: 400px;
+    margin: auto;
 }

@@ -19,3 +19,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<nav id="nav" class="navbar navbar-expand-lg navbar-lightbg-light border-style">
+	<a class="navbar-brand" href="#">
+	    <img src="/image/logo.png" width="80" alt="로고">
+	</a>
+	<div class="collapse navbar-collapse d-flex justify-content-center">
+	    <ul class="navbar-nav">
+	        <li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
+	        <li class="nav-item"><a class="nav-link" href="#">강아지</a></li>
+	        <li class="nav-item"><a class="nav-link" href="#">채소</a></li>
+	        <li class="nav-item"><a class="nav-link" href="#">커뮤니티</a></li>
+	    </ul>
+	</div>
+</nav>

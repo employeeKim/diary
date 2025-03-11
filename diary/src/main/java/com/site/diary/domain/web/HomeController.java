@@ -30,11 +30,5 @@ public class HomeController {
         return "main/home";
     }
     
-    @ResponseBody
-    @GetMapping("/getAllLogs")
-    public List<LogEntity> getAllLogs () {
-    	List<LogEntity> result = logService.getAllLogs();
-    	return result;
-    }
 }
 
