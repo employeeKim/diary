@@ -26,30 +26,45 @@
 	</div>
 </nav>
 <div class="container-fluid">
-<!-- 3번 구역: 메인 콘텐츠 -->
 	<div id="main" class="col-md-9 main-content">
-	    <h3>3번 구역</h3>
+		<div class="post">
+			<div class="post-box post-best-box">
+				<img alt="" src="/image/logo.png" width="100%" height="100%">
+			</div>
+		</div>
+		<div class="board">
+			<div class="board-img-box m-l-10">
+				<div class="board-img">
+					<img alt="" src="https://picsum.photos/600/400" width="100%" height="100%">
+				</div>
+				<div class="board-img">
+					<img alt="" src="https://picsum.photos/600/400" width="100%" height="100%">
+				</div>
+			</div>
+			<div class="notice-box m-l-10">
+			
+			</div>
+		</div>
 	</div>
 </div>
 
-<!-- ✅ 2번 & 3번 구역 -->
 <div class="container-fluid">
     <div class="row">
-        <!-- 2번 구역: 사이드바 -->
         <div class="col-3 sidebar">
-			<div class="login-box">
-			    <!-- 입력 필드 -->
+			<div class="watch-box">
+				<div id="clock"></div>
+			</div>
+			<div class="login-box m-t-10">
 			    <div class="login-input">
 			        <input id="id" type="text" placeholder="아이디">
 			        <input id="pw" type="password" placeholder="비밀번호">
 			    </div>
 			    
-			    <!-- 로그인 & 회원가입 버튼 -->
 			    <div class="login-buttons">
 			        <button id="btnLogin">로그인</button>
 			    </div>
 			</div>
-			<div class="categori-box">
+			<div class="categori-box m-t-10">
 			    <div class="category-item">
 			        <i class="fas fa-user-plus"></i> 회원가입
 			    </div>
