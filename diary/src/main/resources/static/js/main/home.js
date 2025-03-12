@@ -1,23 +1,37 @@
 $(document).ready(function() {
 	setInterval(updateClock, 1000);
 	updateClock();
-//	$("#loadLogs").click(function () {
-//	    $.ajax({
-//			url: "http://localhost:8088/getAllLogs",
-//			type: "GET",
-//			dataType: "json",
-//			success: function (data){
-//				$("#logList").empty();
-//				data.forEach(function (log) {
-//				    $("#logList").append("<li>" + log.timestamp + " - " + log.message + "</li>");
-//				});
-//			},
-//			error: function (error) {
-//				console.log(error);
-//			}
-//		});
-//	});
+	
+	$('#btnSign').click(function() {
+		sign();
+	});
+	
 });
+
+function sign() {
+	if (signValidator()) {
+		var data = JSON.stringify({
+			memberId: $('#memberId').val(),
+			pw: $('#pw').val(),
+			name: $('#name').val(),
+			phone: $('#phone').val(),
+			birth: $('#birth').val(),
+			email: $('#email').val()
+		})
+		$.ajax({
+			url: "",
+			type: "POST",
+			dataType: "",
+			data: data,
+			success: function(data) {
+				console.log(data);
+			},
+			error: function(e) {
+				console.log(e);
+			}
+		});
+	}
+}
 
 function updateClock() {
     let now = new Date();
@@ -25,8 +39,5 @@ function updateClock() {
     let minutes = String(now.getMinutes()).padStart(2, '0');
     let seconds = String(now.getSeconds()).padStart(2, '0');
 	
-//	let days = ["일", "월", "화", "수", "목", "금", "토"];
-//	let day = days[now.getDay()];
-
     $("#clock").text(`${hours}:${minutes}:${seconds}`);
 }

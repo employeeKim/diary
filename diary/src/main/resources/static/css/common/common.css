@@ -146,7 +146,7 @@ body {
 }
 
 /* 회원가입 버튼 */
-#signupSubmit {
+#btnSign {
     background-color: #d2ab7f;
     border: none;
     color: white;
@@ -156,8 +156,13 @@ body {
     font-weight: bold;
 }
 
-#signupSubmit:hover {
+#btnSign:hover {
     background-color: #c28e61;
+}
+
+.required-value {
+	color:red;
+	font-weight:bold;
 }
 
 /* 모달 중앙 정렬 */

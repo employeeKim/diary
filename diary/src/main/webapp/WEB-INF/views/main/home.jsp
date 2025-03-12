@@ -8,6 +8,7 @@
 <%@ include file="/WEB-INF/views/common/header.jsp" %> <!-- 공통 헤더 -->
 <link rel="stylesheet" href="/css/main/home.css">
 <script src="/js/main/home.js"></script>
+<script src="/js/common/memberValidator.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
@@ -64,7 +65,7 @@
 			<div class="login-box m-t-10">
 			    <div class="login-input">
 			        <input id="id" type="text" placeholder="아이디">
-			        <input id="pw" type="password" placeholder="비밀번호">
+			        <input id="loginPw" type="password" placeholder="비밀번호">
 			    </div>
 			    
 			    <div class="login-buttons">
@@ -96,45 +97,51 @@
             <div class="modal-body">
                 <form id="signupForm">
                 	<div class="row m-b-10">
-                		<label for="memberId" class="form-label">아이디</label>
+                		<label for="memberId" class="form-label">아이디<span class="required-value">*</span></label>
 					    <div class="input-group">
 					        <input type="text" class="form-control" id="memberId" name="memberId" required>
 					        <button class="btn btn-outline-secondary" type="button" id="checkDuplicate">중복 확인</button>
 					    </div>
+					    <span id="memberIdError" style="color: red; font-size: 12px;"></span>
 	                </div>
 	                <div class="row m-b-10">
 	                    <div class="mb-3">
-	                        <label for="pw" class="form-label">비밀번호</label>
-	                        <input type="password" class="form-control" id="pw" name="pw" required>
+	                        <label for="pw" class="form-label">비밀번호<span class="required-value">*</span></label>
+	                        <input type="password" class="form-control" id="pw" name="pw" required minlength="6" maxlength="10">
+		                    <span id="pwError" style="color: red; font-size: 12px;"></span>
 	                    </div>
                     </div>
 	                <div class="row m-b-10">
 	                    <div class="mb-3">
-	                        <label for="rePw" class="form-label">비밀번호 확인</label>
-	                        <input type="password" class="form-control" id="rePw" name="rePw" required>
+	                        <label for="rePw" class="form-label">비밀번호 확인<span class="required-value">*</span></label>
+	                        <input type="password" class="form-control" id="rePw" name="rePw" required minlength="6" maxlength="10">
+		                    <span id="rePwError" style="color: red; font-size: 12px;"></span>
 	                    </div>
                     </div>
                     <div class="row m-b-10">
 					    <div class="col-md-6">
-					        <label for="name" class="form-label">성명</label>
-					        <input type="text" class="form-control" id="name" name="name">
+					        <label for="name" class="form-label">성명<span class="required-value">*</span></label>
+					        <input type="text" class="form-control" id="name" name="name" maxlength="10">
+					        <span id="nameError" style="color: red; font-size: 12px;"></span>
 					    </div>
 					    <div class="col-md-6">
-					        <label for="phoneNum" class="form-label">연락처</label>
-					        <input type="text" class="form-control" id="phoneNum" name="phoneNum">
+					        <label for="phone" class="form-label">연락처</label>
+					        <input type="text" class="form-control" id="phone" name="phone" maxlength="12">
+						    <span id="phoneError" style="color: red; font-size: 12px;"></span>
 					    </div>
                     </div>
                     <div class="row m-b-10">
 					    <div class="col-md-6">
-					        <label for="birthdate" class="form-label">생년월일</label>
-					        <input type="date" class="form-control" id="birthdate" name="birthdate">
+					        <label for="birth" class="form-label">생년월일<span class="required-value">*</span></label>
+					        <input type="date" class="form-control" id="birth" name="birth">
 					    </div>
 					    <div class="col-md-6">
 					        <label for="email" class="form-label">이메일</label>
 					        <input type="email" class="form-control" id="email" name="email">
+						    <span id="emailError" style="color: red; font-size: 12px;"></span>
 					    </div>
                     </div>
-                   	<button type="button" class="btn" id="signupSubmit">회원가입</button>
+                   	<button type="button" class="btn" id="btnSign">회원가입</button>
                 </form>
             </div>
         </div>
