@@ -24,7 +24,7 @@ function sign() {
 			dataType: "",
 			data: data,
 			success: function(data) {
-				console.log(data);
+				console.log(data); 
 			},
 			error: function(e) {
 				console.log(e);
