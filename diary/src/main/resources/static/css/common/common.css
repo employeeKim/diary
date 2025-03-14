@@ -170,3 +170,7 @@ body {
     max-width: 400px;
     margin: auto;
 }
+
+.btn-disabled {
+	pointer-events: none;
+}

@@ -25,7 +25,6 @@ $(document).ready(function () {
     });
 });
 
-// null체크
 function validateField(selector, errorSelector, errorMessage) {
     var value = $.trim($(selector).val());
 
@@ -41,7 +40,7 @@ function validateField(selector, errorSelector, errorMessage) {
 function signValidator() {
     var flag = true;
 
-    // 필드별 유효성 검사
+    // null check
     flag &= validateField("#memberId", "#memberIdError", "아이디를 입력해주세요.");
     flag &= validateField("#name", "#nameError", "이름을 입력해주세요.");
     flag &= validateField("#phone", "#phoneError", "전화번호를 입력해주세요.");

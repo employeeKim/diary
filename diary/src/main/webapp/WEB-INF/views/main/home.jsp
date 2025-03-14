@@ -87,7 +87,7 @@
     </div>
 </div>
 <!-- 회원가입 모달 -->
-<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -99,8 +99,8 @@
                 	<div class="row m-b-10">
                 		<label for="memberId" class="form-label">아이디<span class="required-value">*</span></label>
 					    <div class="input-group">
-					        <input type="text" class="form-control" id="memberId" name="memberId" required>
-					        <button class="btn btn-outline-secondary" type="button" id="checkDuplicate">중복 확인</button>
+					        <input type="text" class="form-control" id="memberId" name="memberId" required minlength="6" maxlength="14">
+					        <button class="btn btn-outline-secondary" type="button" id="isMemberBtn">중복 확인</button>
 					    </div>
 					    <span id="memberIdError" style="color: red; font-size: 12px;"></span>
 	                </div>
