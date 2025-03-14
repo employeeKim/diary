@@ -35,13 +35,21 @@
 
 /* 로그인 박스 */
 .login-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#loginBoxBefore {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#loginBoxAfter {
+	display:none;
+    align-items: center;
 }
 
 .login-input {
@@ -164,10 +172,34 @@
     background: linear-gradient(to bottom, #faebd7, #e6cba8);
 }
 
-.board-img {
+.board-img, #profileImg {
 	width:100%;
 	height:100%;
 	padding: 10px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);	
+}
+
+#profileImg {
+	width:45%;
+	height:100%;
+	padding: 10px;
+	margin-right: 20px;
+    border-radius: 40px;
+}
+
+#profileImg img {
+	border-radius: 40px;
+}
+
+.not-login-category, .login-category {
+    display: flex;
+	width: 100%;
+	gap: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-category {
+	display:none;
 }

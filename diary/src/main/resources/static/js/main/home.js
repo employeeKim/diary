@@ -21,6 +21,16 @@ $(document).ready(function() {
 		sign();
 	});
 	
+	$('#btnLogin').click(function() {
+		login();
+	});
+	
+	$("#id, #loginPw").keyup(function (event) {
+	    if (event.key === "Enter" || event.keyCode === 13) {
+	        $("#btnLogin").click(); // 로그인 버튼 클릭 이벤트 실행
+	    }
+	});
+	
 });
 
 function isMemberCheck() {
@@ -70,7 +80,8 @@ function sign() {
 				dataType: "json",
 				data: data,
 				success: function(data) {
-					console.log(data);
+					alert('회원가입 완료!');
+					$('#btnClose').click();
 				},
 				error: function(e) {
 					console.log(e);
@@ -80,6 +91,38 @@ function sign() {
 	} else {
 		$('#memberIdError').text('아이디 중복을 체크해주세요.');
 		$('#memberId').focus();
+	}
+}
+
+function login() {
+	if($('#id').val() == '') {
+		alert('아이디를 입력해주세요.');
+		$('#id').focus();
+	} else if ($('#loginPw').val() == '') {
+		alert('비밀번호를 입력해주세요.');
+		$('#loginPw').focus();
+	} else {
+		var data = JSON.stringify({
+			memberId: $('#id').val(),
+			pw: $('#loginPw').val(),
+		})
+		$.ajax({
+			url: "/login",
+			type: "POST",
+			contentType: "application/json",
+			dataType: "json",
+			data: data,
+			success: function(data) {
+				alert('로그인 완료!');
+				$('#btnClose').click();
+				$('#loginBoxBefore, .not-login-category').css("display", "none");
+				$("#loginBoxAfter, .login-category").css("display", "flex");
+				
+			},
+			error: function(e) {
+				console.log(e);
+			}
+		});
 	}
 }
 

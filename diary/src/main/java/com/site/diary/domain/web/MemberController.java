@@ -30,9 +30,16 @@ public class MemberController {
 	
     @PostMapping("/join")
     @ResponseBody
-    public Map<String, Object> goToMainPage(@RequestBody MemberEntity params) {
+    public Map<String, Object> join(@RequestBody MemberEntity params) {
     	params.setPw(passwordEncoder.encode(params.getPw()));
         return memberService.join(params);
+    }
+    
+    @PostMapping("/login")
+    @ResponseBody
+    public Map<String, Object> login(@RequestBody MemberEntity params) {
+    	params.setPw(passwordEncoder.encode(params.getPw()));
+        return memberService.login(params);
     }
     
     @GetMapping("/isMemberIdCheck")

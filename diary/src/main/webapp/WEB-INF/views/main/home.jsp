@@ -63,24 +63,55 @@
 				<div id="clock"></div>
 			</div>
 			<div class="login-box m-t-10">
-			    <div class="login-input">
-			        <input id="id" type="text" placeholder="아이디">
-			        <input id="loginPw" type="password" placeholder="비밀번호">
-			    </div>
-			    
-			    <div class="login-buttons">
-			        <button id="btnLogin">로그인</button>
-			    </div>
+				<div id="loginBoxBefore">
+				    <div class="login-input">
+				        <input id="id" type="text" placeholder="아이디">
+				        <input id="loginPw" type="password" placeholder="비밀번호">
+				    </div>
+				    
+				    <div class="login-buttons">
+				        <button id="btnLogin">로그인</button>
+				    </div>
+				</div>
+				<div id="loginBoxAfter">
+					<div id="profileImg">
+						<img alt="" src="https://picsum.photos/600/400" width="100%" height="100%">
+					</div>
+					
+					<div id="profileInfo">
+						<p> - 김고용 </p>
+						<p> - ancrea@naver.com </p>
+					</div>
+				</div>
 			</div>
 			<div class="categori-box m-t-10">
-			    <button class="category-item" data-bs-toggle="modal" data-bs-target="#signupModal">
-			        <i class="fas fa-user-plus"></i> 회원가입
-			    </button>
-			    <div class="category-item">
-			        <i class="fas fa-user"></i> 아이디 찾기
+				<div class="not-login-category">
+					<button class="category-item" data-bs-toggle="modal" data-bs-target="#signupModal">
+					    <i class="bi bi-person-plus-fill"></i> 회원가입
+					</button>
+					<button class="category-item" id="btnFindId">
+					    <i class="bi bi-person"></i> 아이디 찾기
+					</button>
+					<button class="category-item" id="btnFindPw">
+					    <i class="bi bi-key-fill"></i> 비밀번호 찾기
+					</button>
 			    </div>
-			    <div class="category-item">
-			        <i class="fas fa-lock"></i> 비밀번호 찾기
+			    <div class="login-category">
+				    <button class="category-item" id="btnModify">
+				        <i class="bi-person-lines-fill"></i> 내 정보 수정
+				    </button>
+				    <button class="category-item" id="btnMyBoard">
+				        <i class="bi-person"></i> 나의 게시물
+				    </button>
+				    <button class="category-item" id="btnLikeBoard">
+				        <i class="bi-hand-thumbs-up-fill"></i> 좋아요 한 게시물
+				    </button>
+				    <button class="category-item" id="btnCommentBoard">
+				        <i class="bi-chat-dots-fill"></i> 댓글 단 게시물
+				    </button>
+				    <button class="category-item" id="btnLogout">
+				        <i class="bi-box-arrow-right"></i> 로그아웃
+				    </button>
 			    </div>
 			</div>
         </div>
@@ -92,7 +123,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="signupModalLabel">회원가입</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button id="btnClose" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="signupForm">

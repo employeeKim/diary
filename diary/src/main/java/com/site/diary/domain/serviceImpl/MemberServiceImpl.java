@@ -2,8 +2,10 @@ package com.site.diary.domain.serviceImpl;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.site.diary.domain.dto.MemberEntity;
@@ -20,13 +22,15 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	MemberRepository memberRepository;
 	
+	@Autowired
+    PasswordEncoder passwordEncoder;
+	
 	@Transactional
 	@Override
 	public Map<String, Object> join(MemberEntity params) {
         Map<String, Object> result = new HashMap<>();
         
         try {
-            log.info("회원가입 요청: {}", params);
             MemberEntity savedMember = memberRepository.save(params);
             result.put("status", "success");
             result.put("message", "회원가입 성공");
@@ -37,6 +41,36 @@ public class MemberServiceImpl implements MemberService {
             result.put("message", "회원가입 실패");
         }
 
+        return result;
+	}
+	
+	@Transactional
+	@Override
+	public Map<String, Object> login(MemberEntity params) {
+        Map<String, Object> result = new HashMap<>();
+        Optional<MemberEntity> memberOptional = memberRepository.findByMemberId(params.getMemberId());
+        
+        // ID 확인
+        if (memberOptional.isEmpty()) {
+            result.put("status", "fail");
+            result.put("message", "아이디가 존재하지 않습니다.");
+            return result;
+        }
+        
+        MemberEntity member = memberOptional.get();
+        
+     // 비밀번호 확인
+        if (!passwordEncoder.matches(params.getPw(), member.getPw())) {
+            result.put("status", "fail");
+            result.put("message", "비밀번호가 일치하지 않습니다.");
+            return result;
+        }
+
+        result.put("status", "success");
+        result.put("message", "로그인 성공");
+        result.put("memberId", member.getMemberId());
+        result.put("name", member.getName());
+        
         return result;
 	}
 	
