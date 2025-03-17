@@ -146,7 +146,7 @@ body {
 }
 
 /* 회원가입 버튼 */
-#btnSign {
+.modal-btn {
     background-color: #d2ab7f;
     border: none;
     color: white;

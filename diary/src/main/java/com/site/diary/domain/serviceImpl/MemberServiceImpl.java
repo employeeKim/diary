@@ -12,6 +12,8 @@ import com.site.diary.domain.dto.MemberEntity;
 import com.site.diary.domain.repository.MemberRepository;
 import com.site.diary.domain.service.MemberService;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 
@@ -46,10 +48,9 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Transactional
 	@Override
-	public Map<String, Object> login(MemberEntity params) {
+	public Map<String, Object> login(MemberEntity params, HttpServletRequest request) {
         Map<String, Object> result = new HashMap<>();
         Optional<MemberEntity> memberOptional = memberRepository.findByMemberId(params.getMemberId());
-        
         // ID 확인
         if (memberOptional.isEmpty()) {
             result.put("status", "fail");
@@ -59,13 +60,17 @@ public class MemberServiceImpl implements MemberService {
         
         MemberEntity member = memberOptional.get();
         
-     // 비밀번호 확인
+        // 비밀번호 확인
         if (!passwordEncoder.matches(params.getPw(), member.getPw())) {
             result.put("status", "fail");
             result.put("message", "비밀번호가 일치하지 않습니다.");
             return result;
         }
 
+        // 세션저장 
+        HttpSession session = request.getSession();
+        session.setAttribute("loginUser", member);
+        
         result.put("status", "success");
         result.put("message", "로그인 성공");
         result.put("memberId", member.getMemberId());

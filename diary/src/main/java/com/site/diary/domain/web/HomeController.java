@@ -16,6 +16,10 @@ import com.site.diary.domain.dto.LogEntity;
 import com.site.diary.domain.repository.LogRepository;
 import com.site.diary.domain.service.LogService;
 
+import jakarta.persistence.metamodel.SetAttribute;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class HomeController {
 

@@ -35,21 +35,13 @@
 
 /* 로그인 박스 */
 .login-box {
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-#loginBoxBefore {
-	display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-}
-
-#loginBoxAfter {
-	display:none;
-    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .login-input {
@@ -190,16 +182,4 @@
 
 #profileImg img {
 	border-radius: 40px;
-}
-
-.not-login-category, .login-category {
-    display: flex;
-	width: 100%;
-	gap: 10px;
-    flex-direction: column;
-    align-items: center;
-}
-
-.login-category {
-	display:none;
 }

@@ -56,6 +56,5 @@ public class MemberEntity {
     @Email(message = "올바른 이메일 형식을 입력하세요.")
     @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$", 
     message = "유효한 이메일 주소를 입력하세요.")
-    @Column(nullable = false, unique = true)
     private String email;
 }
